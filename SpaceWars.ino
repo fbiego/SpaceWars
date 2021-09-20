@@ -319,18 +319,18 @@ void loop() {
         } else {
           delay(12);
         }
-        gfx->fillRect(buletX[j], buletY[j], 12, 12, BLACK);
+        gfx->fillRect(buletX[j], buletY[j]+50, 12, 12, BLACK);
         buletX[j] = -50;
         brojac = brojac + 1;
         gfx->setCursor(200, 0);
         gfx->print(brojac);
         eHealth--;
         tr = map(eHealth, 0, mHealth, 0, 70);
-        gfx->fillRect(120, 3, 70, 7, BLACK);
-        gfx->fillRect(120, 3, tr, 7, GREEN);
+        gfx->fillRect(120, 53, 70, 57, BLACK);
+        gfx->fillRect(120, 53, tr, 57, GREEN);
 
         if (eHealth <= 0) {
-          gfx->draw16bitRGBBitmap(ex, ey, buum,  55, 55);
+          gfx->draw16bitRGBBitmap(ex, ey+50, buum,  55, 55);
           tone(BUZZER_PIN, NOTE_E4, 100, BUZZER_CHANNEL);
           tone(BUZZER_PIN, NOTE_D4, 80, BUZZER_CHANNEL);
           tone(BUZZER_PIN, NOTE_G5, 100, BUZZER_CHANNEL);
