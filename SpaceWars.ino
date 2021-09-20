@@ -237,7 +237,7 @@ void loop() {
       x = x - sped;
     }
 
-    if (digitalRead(13) == 0 ) { //fire button A button
+    if (Ps3.data.button.circle == 1 ) { //fire button A button
       if (pom == 0) {
         pom = 1;
 
@@ -250,7 +250,7 @@ void loop() {
     }
 
 
-    if (digitalRead(12) == 0 && rockets > 0) { //Rocket button B button
+    if (Ps3.data.button.cross == 1 && rockets > 0) { //Rocket button B button
       if (pom2 == 0) {
         pom2 = 1;
         rockets--;
@@ -263,7 +263,7 @@ void loop() {
     } else {
       pom2 = 0;
     }
-    if (digitalRead(35) == 0) { //buton 35 , on and off sound
+    if (Ps3.data.button.triangle == 1) { //buton 35 , on and off sound
       if (pom3 == 0) {
         pom3 = 1;
         sound = !sound;
