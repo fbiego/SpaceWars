@@ -81,7 +81,7 @@ void setup() {
   gfx->init();
   gfx->setRotation(1);
   gfx->fillScreen(BLACK);
-  gfx->setSwapBytes(true);
+  //gfx->setSwapBytes(true);
   gfx->pushImage(0, 0,  240, 135, back2);
 
 
@@ -198,7 +198,7 @@ void loop() {
   if (fase == 0) {
     restart();
     gfx->fillScreen(BLACK);
-    gfx->setSwapBytes(true);
+    //gfx->setSwapBytes(true);
     gfx->pushImage(0, 0,  240, 135, back2);
     while (digitalRead(13) == 1) {
       int nezz = 0;
