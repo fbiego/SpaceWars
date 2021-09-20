@@ -195,14 +195,12 @@ void newLevel() {
 
 void loop() {
 
-  if (fase == 0)
-  {
+  if (fase == 0) {
     restart();
     gfx->fillScreen(BLACK);
     gfx->setSwapBytes(true);
     gfx->pushImage(0, 0,  240, 135, back2);
-    while (digitalRead(13) == 1)
-    {
+    while (digitalRead(13) == 1) {
       int nezz = 0;
     }
     gfx->fillScreen(BLACK);
