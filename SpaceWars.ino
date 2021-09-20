@@ -18,7 +18,7 @@
 #define BUZZER_PIN 27
 #define BUZZER_CHANNEL 0
 
-#define TFT_GREY 0x5AEB
+#define GREY 0x5AEB
 #define lightblue 0x2D18
 #define orange 0xFB60
 #define purple 0xFB9B
@@ -190,8 +190,8 @@ void draw() {
   gfx->setCursor(200, 0);
   gfx->print(brojac);
 
-  gfx->fillRect(120, 3, 70, 7, TFT_GREEN);
-  gfx->drawRect(119, 2, 72, 9, TFT_GREY);
+  gfx->fillRect(120, 3, 70, 7, GREEN);
+  gfx->drawRect(119, 2, 72, 9, GREY);
 }
 
 
@@ -246,7 +246,7 @@ void loop() {
         rocketY[rcounter] = y + 14;
         rcounter = rcounter + 1;
         ri[rockets] = -100;
-        gfx->fillRect(70 + (rockets * 14), 0, 8, 14, TFT_BLACK);
+        gfx->fillRect(70 + (rockets * 14), 0, 8, 14, BLACK);
       }
     } else {
       pom2 = 0;
@@ -261,11 +261,11 @@ void loop() {
       pom3 = 0;
     }
     for (int i = 0; i < 30; i++) { //drawStars..........................................
-      gfx->drawPixel(spaceX[i], spaceY[i], TFT_BLACK);
+      gfx->drawPixel(spaceX[i], spaceY[i], BLACK);
       spaceX[i] = spaceX[i] - 0.5;
-      gfx->drawPixel(spaceX[i], spaceY[i], TFT_GREY);
+      gfx->drawPixel(spaceX[i], spaceY[i], GREY);
       if (spaceX[i] < 0) {
-        gfx->drawPixel(spaceX[i], spaceY[i], TFT_BLACK);
+        gfx->drawPixel(spaceX[i], spaceY[i], BLACK);
 
         spaceX[i] = 244;
       }
@@ -308,15 +308,15 @@ void loop() {
         } else {
           delay(12);
         }
-        gfx->fillRect(buletX[j], buletY[j], 12, 12, TFT_BLACK);
+        gfx->fillRect(buletX[j], buletY[j], 12, 12, BLACK);
         buletX[j] = -50;
         brojac = brojac + 1;
         gfx->setCursor(200, 0, 2);
         gfx->print(brojac);
         eHealth--;
         tr = map(eHealth, 0, mHealth, 0, 70);
-        gfx->fillRect(120, 3, 70, 7, TFT_BLACK);
-        gfx->fillRect(120, 3, tr, 7, TFT_GREEN);
+        gfx->fillRect(120, 3, 70, 7, BLACK);
+        gfx->fillRect(120, 3, tr, 7, GREEN);
 
         if (eHealth <= 0) {
           gfx->draw16bitRGBBitmap(ex, ey,  55, 55, buum);
@@ -348,7 +348,7 @@ void loop() {
         } else {
           delay(40);
         }
-        gfx->fillRect(rocketX[j], rocketY[j], 24, 24, TFT_BLACK);
+        gfx->fillRect(rocketX[j], rocketY[j], 24, 24, BLACK);
         //delay(30);
 
         rocketX[j] = -50;
@@ -357,8 +357,8 @@ void loop() {
         gfx->print(brojac);
         eHealth = eHealth - rDamage;
         tr = map(eHealth, 0, mHealth, 0, 70);
-        gfx->fillRect(120, 3, 70, 7, TFT_BLACK);
-        gfx->fillRect(120, 3, tr, 7, TFT_GREEN);
+        gfx->fillRect(120, 3, 70, 7, BLACK);
+        gfx->fillRect(120, 3, tr, 7, GREEN);
 
         if (eHealth <= 0) {
           gfx->draw16bitRGBBitmap(ex, ey,  55, 55, buum);
@@ -384,7 +384,7 @@ void loop() {
       if (EbuletX[j] < x + 30 && EbuletX[j] > x + 4 && EbuletY[j] > y + 4 && EbuletY[j] < y + 36 ) {
         EbuletX[j] = -50;
         ly[lives - 1] = -40;
-        gfx->fillRect((lives - 1) * 14, 0, 14, 14, TFT_BLACK);
+        gfx->fillRect((lives - 1) * 14, 0, 14, 14, BLACK);
         lives--;
         if (lives == 0) {
           gfx->draw16bitRGBBitmap(x, y,  55, 55, buum);
