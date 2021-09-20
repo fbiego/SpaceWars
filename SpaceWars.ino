@@ -443,17 +443,15 @@ void loop() {
     }
 
     ey = ey + es;
-    if (ey > 80)
+    if (ey > 80){
       es = es * -1;
-
-    if (ey < 18)
+    }
+    if (ey < 18){
       es = es * -1;
-
-
-
-    if (blinkTime > 0)
+    }
+    if (blinkTime > 0){
       blinkTime++;
-
+    }
     if (blinkTime > 2) {
       digitalWrite(25, 0);
       digitalWrite(33, 0);
