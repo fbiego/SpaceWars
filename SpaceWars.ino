@@ -431,7 +431,7 @@ void loop() {
 
     for (int i = 0; i < 10; i++) { //enemy shoots
       if (EbuletX[i] > -10) {
-        gfx->draw16bitRGBBitmap(EbuletX[i], EbuletY[i],  7, 7, ebullet);
+        gfx->draw16bitRGBBitmap(EbuletX[i], EbuletY[i], ebullet,  7, 7);
         EbuletX[i] = EbuletX[i] - EbulletSpeed;
       }
 
