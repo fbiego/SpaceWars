@@ -189,8 +189,8 @@ void draw() {
   delay(2600);
 
 
-  while (digitalRead(13) == 1) { // wait until button a is pressed.............
-    int nezz = 0;
+   while (st == 0) { // wait until button a is pressed.............
+    Serial.print("");
   }
   gfx->fillScreen(BLACK);
 
