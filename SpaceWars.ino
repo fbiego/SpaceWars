@@ -352,7 +352,7 @@ void loop() {
 
     for (int j = 0; j < 10; j++) { //did my ROCKET hit enemy
       if (rocketX[j] + 18 > ex && rocketY[j] > ey + 2 && rocketY[j] < ey + 52 ) {
-        gfx->draw16bitRGBBitmap(rocketX[j], rocketY[j], explosion,  24, 24);
+        gfx->draw16bitRGBBitmap(rocketX[j], rocketY[j]+50, explosion,  24, 24);
         if (sound == 1) {
           tone(BUZZER_PIN, NOTE_C3, 40, BUZZER_CHANNEL);
           noTone(BUZZER_PIN, BUZZER_CHANNEL);
