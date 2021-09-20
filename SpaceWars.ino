@@ -171,6 +171,7 @@ void newLevel() {
 
 void draw() {
   gfx->fillScreen(BLACK);
+  gfx->setTextColor(WHITE, BLACK);
   gfx->setCursor(30, 72);
   gfx->setTextSize(2);
   gfx->print("Level " + String(level));
