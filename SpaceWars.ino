@@ -186,7 +186,7 @@ void draw() {
 
   gfx->draw16bitRGBBitmap(170, 5, earth[level - 1],  55, 54);
   gfx->draw16bitRGBBitmap(170, 61, sens,  72, 72);
-  delay(2600);
+  delay(1000);
 
 
   while (st == 0) { // wait until button a is pressed.............
