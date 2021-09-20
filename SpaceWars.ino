@@ -288,7 +288,7 @@ void loop() {
 
     for (int i = 0; i < 10; i++) { //firing rockets
       if (rocketX[i] > 0) {
-        gfx->draw16bitRGBBitmap(rocketX[i], rocketY[i],  24, 12, rocket);
+        gfx->draw16bitRGBBitmap(rocketX[i], rocketY[i], rocket,  24, 12);
         rocketX[i] = rocketX[i] + rocketSpeed;
       }
       if (rocketX[i] > 240) {
