@@ -93,7 +93,6 @@ void setup(void) {
   while (digitalRead(13) == 1){ // wait until button a is pressed.............
     int nezz = 0;
   }
-  digitalWrite(26, 0);
 
 }
 
@@ -124,8 +123,7 @@ void restart(){
   rocketSpeed = 0.22;
 
 
-  for (int i = 0; i < 10; i++)
-  {
+  for (int i = 0; i < 10; i++) {
     buletX[i] = -20;
     EbuletX[i] = -20;
     rocketX[i] = -20;
