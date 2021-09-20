@@ -77,6 +77,12 @@ int fase = 0; //fase 0=start screen,//fase 1=playing fase //fase 3=game over
 float spaceX[30];
 float spaceY[30];
 
+uint8_t mac[] = {1, 2, 3, 4, 5, 6};
+int st = 0;
+
+void notify() {
+  st = Ps3.data.button.start;
+}
 
 void setup() {
   gfx->begin();
