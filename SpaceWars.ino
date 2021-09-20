@@ -155,8 +155,12 @@ void newLevel() {
     rocketX[i] = -20;
 
   }
+  draw();
 
-  gfx->fillScreen(BLACK);
+}
+
+void draw(){
+    gfx->fillScreen(BLACK);
   gfx->setCursor(0, 0, 4);
   gfx->print("Level " + String(level));
   gfx->setCursor(0, 22, 2);
@@ -188,7 +192,6 @@ void newLevel() {
 
   gfx->fillRect(120, 3, 70, 7, TFT_GREEN);
   gfx->drawRect(119, 2, 72, 9, TFT_GREY);
-
 }
 
 
