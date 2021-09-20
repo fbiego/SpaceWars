@@ -82,7 +82,7 @@ void setup() {
   gfx->setRotation(1);
   gfx->fillScreen(BLACK);
   //gfx->setSwapBytes(true);
-  gfx->pushImage(0, 0,  240, 135, back2);
+  gfx->draw16bitRGBBitmap(0, 0,  240, 135, back2);
 
 
   for (int i = 0; i < 30; i++) {
@@ -173,8 +173,8 @@ void draw(){
   gfx->println("Rocket damage : " + String(rDamage));
   gfx->println("Rocket speed : " + String(rocketSpeed));
 
-  gfx->pushImage(170, 5,  55, 54, earth[level - 1]);
-  gfx->pushImage(170, 61,  72, 72, sens);
+  gfx->draw16bitRGBBitmap(170, 5,  55, 54, earth[level - 1]);
+  gfx->draw16bitRGBBitmap(170, 61,  72, 72, sens);
   delay(2600);
 
 
@@ -202,7 +202,7 @@ void loop() {
     restart();
     gfx->fillScreen(BLACK);
     //gfx->setSwapBytes(true);
-    gfx->pushImage(0, 0,  240, 135, back2);
+    gfx->draw16bitRGBBitmap(0, 0,  240, 135, back2);
     while (digitalRead(13) == 1) {
       int nezz = 0;
     }
@@ -273,12 +273,12 @@ void loop() {
 
 
 
-    gfx->pushImage(x, y,  49, 40, brod1);
-    gfx->pushImage(ex, ey,  55, 54, earth[level - 1]);
+    gfx->draw16bitRGBBitmap(x, y,  49, 40, brod1);
+    gfx->draw16bitRGBBitmap(ex, ey,  55, 54, earth[level - 1]);
 
     for (int i = 0; i < 10; i++) { //firing buletts
       if (buletX[i] > 0) {
-        gfx->pushImage(buletX[i], buletY[i],  8, 8, bulet);
+        gfx->draw16bitRGBBitmap(buletX[i], buletY[i],  8, 8, bulet);
         buletX[i] = buletX[i] + 0.6;
       }
       if (buletX[i] > 240) {
@@ -288,7 +288,7 @@ void loop() {
 
     for (int i = 0; i < 10; i++) { //firing rockets
       if (rocketX[i] > 0) {
-        gfx->pushImage(rocketX[i], rocketY[i],  24, 12, rocket);
+        gfx->draw16bitRGBBitmap(rocketX[i], rocketY[i],  24, 12, rocket);
         rocketX[i] = rocketX[i] + rocketSpeed;
       }
       if (rocketX[i] > 240) {
@@ -301,7 +301,7 @@ void loop() {
 
     for (int j = 0; j < 10; j++) { //did my bulet hit enemy
       if (buletX[j] > ex + 20 && buletY[j] > ey + 2 && buletY[j] < ey + 52 ) {
-        gfx->pushImage(buletX[j], buletY[j],  12, 12, ex2);
+        gfx->draw16bitRGBBitmap(buletX[j], buletY[j],  12, 12, ex2);
         if (sound == 1) {
           tone(BUZZER_PIN, NOTE_C5, 12, BUZZER_CHANNEL);
           noTone(BUZZER_PIN, BUZZER_CHANNEL);
@@ -319,7 +319,7 @@ void loop() {
         gfx->fillRect(120, 3, tr, 7, TFT_GREEN);
 
         if (eHealth <= 0) {
-          gfx->pushImage(ex, ey,  55, 55, buum);
+          gfx->draw16bitRGBBitmap(ex, ey,  55, 55, buum);
           tone(BUZZER_PIN, NOTE_E4, 100, BUZZER_CHANNEL);
           tone(BUZZER_PIN, NOTE_D4, 80, BUZZER_CHANNEL);
           tone(BUZZER_PIN, NOTE_G5, 100, BUZZER_CHANNEL);
@@ -341,7 +341,7 @@ void loop() {
 
     for (int j = 0; j < 10; j++) { //did my ROCKET hit enemy
       if (rocketX[j] + 18 > ex && rocketY[j] > ey + 2 && rocketY[j] < ey + 52 ) {
-        gfx->pushImage(rocketX[j], rocketY[j],  24, 24, explosion);
+        gfx->draw16bitRGBBitmap(rocketX[j], rocketY[j],  24, 24, explosion);
         if (sound == 1) {
           tone(BUZZER_PIN, NOTE_C3, 40, BUZZER_CHANNEL);
           noTone(BUZZER_PIN, BUZZER_CHANNEL);
@@ -361,7 +361,7 @@ void loop() {
         gfx->fillRect(120, 3, tr, 7, TFT_GREEN);
 
         if (eHealth <= 0) {
-          gfx->pushImage(ex, ey,  55, 55, buum);
+          gfx->draw16bitRGBBitmap(ex, ey,  55, 55, buum);
           tone(BUZZER_PIN, NOTE_E4, 100, BUZZER_CHANNEL);
           tone(BUZZER_PIN, NOTE_D4, 80, BUZZER_CHANNEL);
           tone(BUZZER_PIN, NOTE_G5, 100, BUZZER_CHANNEL);
@@ -387,7 +387,7 @@ void loop() {
         gfx->fillRect((lives - 1) * 14, 0, 14, 14, TFT_BLACK);
         lives--;
         if (lives == 0) {
-          gfx->pushImage(x, y,  55, 55, buum);
+          gfx->draw16bitRGBBitmap(x, y,  55, 55, buum);
           tone(BUZZER_PIN, NOTE_G4, 100, BUZZER_CHANNEL);
           tone(BUZZER_PIN, NOTE_B4, 80, BUZZER_CHANNEL);
           tone(BUZZER_PIN, NOTE_C5, 100, BUZZER_CHANNEL);
@@ -431,17 +431,17 @@ void loop() {
 
     for (int i = 0; i < 10; i++) { //enemy shoots
       if (EbuletX[i] > -10) {
-        gfx->pushImage(EbuletX[i], EbuletY[i],  7, 7, ebullet);
+        gfx->draw16bitRGBBitmap(EbuletX[i], EbuletY[i],  7, 7, ebullet);
         EbuletX[i] = EbuletX[i] - EbulletSpeed;
       }
 
     }
 
     for (int i = 0; i < 4; i++) { //draw lifes
-      gfx->pushImage(i * 14, ly[i],  12, 11, life);
+      gfx->draw16bitRGBBitmap(i * 14, ly[i],  12, 11, life);
     }
     for (int i = 0; i < 3; i++) { //draw lifes
-      gfx->pushImage(70 + (i * 14), ri[i] ,  8, 14, ricon);
+      gfx->draw16bitRGBBitmap(70 + (i * 14), ri[i] ,  8, 14, ricon);
     }
 
     fireCount++;
@@ -467,7 +467,7 @@ void loop() {
 
 
     gfx->fillScreen(BLACK);
-    gfx->pushImage(0, 0,  240, 135, gameOver);
+    gfx->draw16bitRGBBitmap(0, 0,  240, 135, gameOver);
     gfx->setCursor(24, 54, 2);
     gfx->print("Score : " + String(brojac));
     gfx->setCursor(24, 69, 2);
