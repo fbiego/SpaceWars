@@ -206,39 +206,7 @@ void loop() {
     while (digitalRead(13) == 1) {
       int nezz = 0;
     }
-    gfx->fillScreen(BLACK);
-    gfx->fillScreen(BLACK);
-    gfx->setCursor(0, 0, 4);
-    gfx->print("Level " + String(level));
-    gfx->setCursor(0, 22, 2);
-
-    gfx->println("Enemy speed : " + String(es));
-    gfx->println("Enemy health : " + String(eHealth));
-    gfx->println("Enemy bullet speed : " + String(EbulletSpeed));
-    gfx->println("Remaining lives: " + String(lives));
-    gfx->println("My speed : " + String(sped));
-    gfx->println("Rocket damage : " + String(rDamage));
-    gfx->println("Rocket speed : " + String(rocketSpeed));
-
-    gfx->pushImage(170, 5,  55, 54, earth[level - 1]);
-    gfx->pushImage(170, 61,  72, 72, sens);
-    delay(1000);
-
-
-    while (digitalRead(13) == 1) { // wait until button a is pressed.............
-      int nezz = 0;
-    }
-    gfx->fillScreen(BLACK);
-
-    gfx->drawLine(0, 16, 240, 16, lightblue);
-    gfx->drawLine(0, 134, 240, 134, lightblue);
-
-    gfx->setCursor(200, 0, 2);
-    gfx->print(brojac);
-
-    gfx->fillRect(120, 3, 70, 7, TFT_GREEN);
-    gfx->drawRect(119, 2, 72, 9, TFT_GREY);
-
+    draw();
 
     fase = 1;
   }
