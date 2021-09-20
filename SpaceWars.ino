@@ -176,13 +176,13 @@ void draw() {
   gfx->print("Level " + String(level));
   gfx->setCursor(0, 22);
 gfx->setTextSize(1);
-  gfx->println("Enemy speed : " + String(es));
-  gfx->println("Enemy health : " + String(eHealth));
-  gfx->println("Enemy bullet speed : " + String(EbulletSpeed));
-  gfx->println("Remaining lives: " + String(lives));
-  gfx->println("My speed : " + String(sped));
-  gfx->println("Rocket damage : " + String(rDamage));
-  gfx->println("Rocket speed : " + String(rocketSpeed));
+gfx->println("   Enemy speed : " + String(es));
+  gfx->println("   Enemy health : " + String(eHealth));
+  gfx->println("   Enemy bullet speed : " + String(EbulletSpeed));
+  gfx->println("   Remaining lives: " + String(lives));
+  gfx->println("   My speed : " + String(sped));
+  gfx->println("   Rocket damage : " + String(rDamage));
+  gfx->println("   Rocket speed : " + String(rocketSpeed));
 
   gfx->draw16bitRGBBitmap(170, 5, earth[level - 1],  55, 54);
   gfx->draw16bitRGBBitmap(170, 61, sens,  72, 72);
