@@ -81,7 +81,7 @@ float spaceY[30];
 void setup(void) {
   gfx->init();
   gfx->setRotation(1);
-  gfx->fillScreen(TFT_BLACK);
+  gfx->fillScreen(BLACK);
   gfx->setSwapBytes(true);
   gfx->pushImage(0, 0,  240, 135, back2);
 
@@ -161,7 +161,7 @@ void newLevel()
 
   }
 
-  gfx->fillScreen(TFT_BLACK);
+  gfx->fillScreen(BLACK);
   gfx->setCursor(0, 0, 4);
   gfx->print("Level " + String(level));
   gfx->setCursor(0, 22, 2);
@@ -182,7 +182,7 @@ void newLevel()
   while (digitalRead(13) == 1) // wait until button a is pressed.............
     int nezz = 0;
 
-  gfx->fillScreen(TFT_BLACK);
+  gfx->fillScreen(BLACK);
 
 
   gfx->drawLine(0, 16, 240, 16, lightblue);
@@ -203,15 +203,15 @@ void loop() {
   if (fase == 0)
   {
     restart();
-    gfx->fillScreen(TFT_BLACK);
+    gfx->fillScreen(BLACK);
     gfx->setSwapBytes(true);
     gfx->pushImage(0, 0,  240, 135, back2);
     while (digitalRead(13) == 1)
     {
       int nezz = 0;
     }
-    gfx->fillScreen(TFT_BLACK);
-    gfx->fillScreen(TFT_BLACK);
+    gfx->fillScreen(BLACK);
+    gfx->fillScreen(BLACK);
     gfx->setCursor(0, 0, 4);
     gfx->print("Level " + String(level));
     gfx->setCursor(0, 22, 2);
@@ -232,7 +232,7 @@ void loop() {
     while (digitalRead(13) == 1) // wait until button a is pressed.............
       int nezz = 0;
 
-    gfx->fillScreen(TFT_BLACK);
+    gfx->fillScreen(BLACK);
 
     gfx->drawLine(0, 16, 240, 16, lightblue);
     gfx->drawLine(0, 134, 240, 134, lightblue);
@@ -435,7 +435,7 @@ void loop() {
           tone(BUZZER_PIN, NOTE_F4, 280, BUZZER_CHANNEL);
           noTone(BUZZER_PIN, BUZZER_CHANNEL);
           delay(500);
-          gfx->fillScreen(TFT_BLACK);
+          gfx->fillScreen(BLACK);
           fase = 2;
         }
 
@@ -506,7 +506,7 @@ void loop() {
   if (fase == 2) //game over fase
   {
 
-    gfx->fillScreen(TFT_BLACK);
+    gfx->fillScreen(BLACK);
     gfx->pushImage(0, 0,  240, 135, gameOver);
     gfx->setCursor(24, 54, 2);
     gfx->print("Score : " + String(brojac));
