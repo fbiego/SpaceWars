@@ -159,8 +159,8 @@ void newLevel() {
 
 }
 
-void draw(){
-    gfx->fillScreen(BLACK);
+void draw() {
+  gfx->fillScreen(BLACK);
   gfx->setCursor(0, 0, 4);
   gfx->print("Level " + String(level));
   gfx->setCursor(0, 22, 2);
