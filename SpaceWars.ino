@@ -310,8 +310,9 @@ void loop() {
         gfx->pushImage(buletX[i], buletY[i],  8, 8, bulet);
         buletX[i] = buletX[i] + 0.6;
       }
-      if (buletX[i] > 240)
+      if (buletX[i] > 240){
         buletX[i] = -30;
+      }
     }
 
     for (int i = 0; i < 10; i++) { //firing rockets
@@ -319,8 +320,9 @@ void loop() {
         gfx->pushImage(rocketX[i], rocketY[i],  24, 12, rocket);
         rocketX[i] = rocketX[i] + rocketSpeed;
       }
-      if (rocketX[i] > 240)
+      if (rocketX[i] > 240){
         rocketX[i] = -30;
+      }
     }
 
     //delay(1);
