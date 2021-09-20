@@ -92,7 +92,7 @@ void setup() {
   gfx->begin();
   gfx->fillScreen(BLACK);
 
-  gfx->draw16bitRGBBitmap(0, 0, back2, 240, 135);
+  gfx->draw16bitRGBBitmap(0, 50, back2, 240, 135);
 
 
   for (int i = 0; i < 30; i++) {
@@ -171,7 +171,7 @@ void newLevel() {
 
 void draw() {
   gfx->fillScreen(BLACK);
-  gfx->setCursor(0, 72);
+  gfx->setCursor(30, 72);
   gfx->setTextSize(2);
   gfx->print("Level " + String(level));
   gfx->setCursor(0, 92);
