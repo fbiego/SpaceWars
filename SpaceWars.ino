@@ -189,7 +189,7 @@ void draw() {
   delay(2600);
 
 
-   while (st == 0) { // wait until button a is pressed.............
+  while (st == 0) { // wait until button a is pressed.............
     Serial.print("");
   }
   gfx->fillScreen(BLACK);
@@ -215,8 +215,8 @@ void loop() {
     //gfx->setSwapBytes(true);
     gfx->draw16bitRGBBitmap(0, 0, back2,  240, 135);
     while (st == 0) { // wait until button a is pressed.............
-    Serial.print("");
-  }
+      Serial.print("");
+    }
     draw();
 
     fase = 1;
@@ -484,8 +484,8 @@ void loop() {
     gfx->setCursor(24, 69);
     gfx->print("Level : " + String(level));
     while (st == 0) { // wait until button a is pressed.............
-    Serial.print("");
-  }
+      Serial.print("");
+    }
     fase = 0;
   }
 }
