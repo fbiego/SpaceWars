@@ -1,5 +1,6 @@
 #include <Arduino_GFX_Library.h>
 #include <Tone32.h>
+#include <Ps3Controller.h>
 #include "rocket.h"
 #include "brod1.h"
 #include "bulet.h"
