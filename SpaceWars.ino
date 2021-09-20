@@ -102,12 +102,13 @@ void setup() {
 
   while (st == 0) { // wait until button a is pressed.............
     Serial.print("");
+    pad();
   }
 
 }
 
 void pad(){
-  if (Psp){
+  if (Ps3.isConnected()){
     gfx->draw16bitRGBBitmap(112, 5, gamepad,  16, 16);
   } else {
     gfx->fillRect(112, 5, 16, 16, BLACK);
@@ -200,6 +201,7 @@ void draw() {
 
   while (st == 0) { // wait until button a is pressed.............
     Serial.print("");
+    pad();
   }
   gfx->fillScreen(BLACK);
 
@@ -221,10 +223,11 @@ void loop() {
   if (fase == 0) {
     restart();
     gfx->fillScreen(BLACK);
-
+    pad();
     gfx->draw16bitRGBBitmap(0, 50, back2,  240, 135);
     while (st == 0) { // wait until button a is pressed.............
       Serial.print("");
+      pad();
     }
     draw();
 
@@ -497,7 +500,9 @@ void loop() {
     gfx->print("Level : " + String(level));
     while (st == 0) { // wait until button a is pressed.............
       Serial.print("");
+      pad();
     }
+    pad();
     fase = 0;
   }
 }
