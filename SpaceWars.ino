@@ -395,7 +395,7 @@ void loop() {
       if (EbuletX[j] < x + 30 && EbuletX[j] > x + 4 && EbuletY[j] > y + 4 && EbuletY[j] < y + 36 ) {
         EbuletX[j] = -50;
         ly[lives - 1] = -40;
-        gfx->fillRect((lives - 1) * 14 + 10, 50, 14, 14, BLACK);
+        gfx->fillRect((lives - 1) * 14 + 70, 30, 14, 14, BLACK);
         lives--;
         if (lives == 0) {
           gfx->draw16bitRGBBitmap(x, y + 50, buum,  55, 55);
@@ -449,7 +449,7 @@ void loop() {
     }
 
     for (int i = 0; i < 4; i++) { //draw lifes
-      gfx->draw16bitRGBBitmap(i * 14 + 10, ly[i] + 50, life,  12, 11);
+      gfx->draw16bitRGBBitmap(i * 14 + 70, ly[i] + 30, life,  12, 11);
     }
     for (int i = 0; i < 3; i++) { //draw lifes
       gfx->draw16bitRGBBitmap(70 + (i * 14), ri[i] + 50, ricon ,  8, 14);
