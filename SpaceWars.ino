@@ -181,6 +181,7 @@ void newLevel() {
 
 void draw() {
   gfx->fillScreen(BLACK);
+  pad();
   gfx->setTextColor(WHITE, BLACK);
   gfx->setCursor(30, 72);
   gfx->setTextSize(2);
