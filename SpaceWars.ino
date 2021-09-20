@@ -78,7 +78,7 @@ float spaceY[30];
 
 
 void setup() {
-  gfx->init();
+  gfx->begin();
   gfx->setRotation(1);
   gfx->fillScreen(BLACK);
   //gfx->setSwapBytes(true);
@@ -311,7 +311,7 @@ void loop() {
         gfx->fillRect(buletX[j], buletY[j], 12, 12, BLACK);
         buletX[j] = -50;
         brojac = brojac + 1;
-        gfx->setCursor(200, 0, 2);
+        gfx->setCursor(200, 0);
         gfx->print(brojac);
         eHealth--;
         tr = map(eHealth, 0, mHealth, 0, 70);
