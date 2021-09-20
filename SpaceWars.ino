@@ -205,8 +205,7 @@ void draw() {
     pad();
   }
   gfx->fillScreen(BLACK);
-
-
+  pad();
   gfx->drawLine(0, 66, 240, 66, lightblue);
   gfx->drawLine(0, 184, 240, 184, lightblue);
 
