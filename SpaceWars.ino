@@ -364,15 +364,15 @@ void loop() {
 
         rocketX[j] = -50;
         brojac = brojac + 12;
-        gfx->setCursor(200, 0);
+        gfx->setCursor(200, 50);
         gfx->print(brojac);
         eHealth = eHealth - rDamage;
         tr = map(eHealth, 0, mHealth, 0, 70);
-        gfx->fillRect(120, 3, 70, 7, BLACK);
-        gfx->fillRect(120, 3, tr, 7, GREEN);
+        gfx->fillRect(120, 53, 70, 57, BLACK);
+        gfx->fillRect(120, 53, tr, 57, GREEN);
 
         if (eHealth <= 0) {
-          gfx->draw16bitRGBBitmap(ex, ey, buum,  55, 55);
+          gfx->draw16bitRGBBitmap(ex, ey+50, buum,  55, 55);
           tone(BUZZER_PIN, NOTE_E4, 100, BUZZER_CHANNEL);
           tone(BUZZER_PIN, NOTE_D4, 80, BUZZER_CHANNEL);
           tone(BUZZER_PIN, NOTE_G5, 100, BUZZER_CHANNEL);
@@ -395,10 +395,10 @@ void loop() {
       if (EbuletX[j] < x + 30 && EbuletX[j] > x + 4 && EbuletY[j] > y + 4 && EbuletY[j] < y + 36 ) {
         EbuletX[j] = -50;
         ly[lives - 1] = -40;
-        gfx->fillRect((lives - 1) * 14, 0, 14, 14, BLACK);
+        gfx->fillRect((lives - 1) * 14, 50, 14, 14, BLACK);
         lives--;
         if (lives == 0) {
-          gfx->draw16bitRGBBitmap(x, y, buum,  55, 55);
+          gfx->draw16bitRGBBitmap(x, y+50, buum,  55, 55);
           tone(BUZZER_PIN, NOTE_G4, 100, BUZZER_CHANNEL);
           tone(BUZZER_PIN, NOTE_B4, 80, BUZZER_CHANNEL);
           tone(BUZZER_PIN, NOTE_C5, 100, BUZZER_CHANNEL);
@@ -442,17 +442,17 @@ void loop() {
 
     for (int i = 0; i < 10; i++) { //enemy shoots
       if (EbuletX[i] > -10) {
-        gfx->draw16bitRGBBitmap(EbuletX[i], EbuletY[i], ebullet,  7, 7);
+        gfx->draw16bitRGBBitmap(EbuletX[i], EbuletY[i]+50, ebullet,  7, 7);
         EbuletX[i] = EbuletX[i] - EbulletSpeed;
       }
 
     }
 
     for (int i = 0; i < 4; i++) { //draw lifes
-      gfx->draw16bitRGBBitmap(i * 14, ly[i], life,  12, 11);
+      gfx->draw16bitRGBBitmap(i * 14, ly[i]+50, life,  12, 11);
     }
     for (int i = 0; i < 3; i++) { //draw lifes
-      gfx->draw16bitRGBBitmap(70 + (i * 14), ri[i], ricon ,  8, 14);
+      gfx->draw16bitRGBBitmap(70 + (i * 14), ri[i]+50, ricon ,  8, 14);
     }
 
     fireCount++;
@@ -478,10 +478,10 @@ void loop() {
 
 
     gfx->fillScreen(BLACK);
-    gfx->draw16bitRGBBitmap(0, 0, gameOver,  240, 135);
-    gfx->setCursor(24, 54);
+    gfx->draw16bitRGBBitmap(0, 50, gameOver,  240, 135);
+    gfx->setCursor(24, 104);
     gfx->print("Score : " + String(brojac));
-    gfx->setCursor(24, 69);
+    gfx->setCursor(24, 120);
     gfx->print("Level : " + String(level));
     while (st == 0) { // wait until button a is pressed.............
       Serial.print("");
