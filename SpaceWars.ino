@@ -173,9 +173,10 @@ void newLevel() {
 void draw() {
   gfx->fillScreen(BLACK);
   gfx->setCursor(0, 0);
+  gfx->setTextSize(2);
   gfx->print("Level " + String(level));
   gfx->setCursor(0, 22);
-
+gfx->setTextSize(1);
   gfx->println("Enemy speed : " + String(es));
   gfx->println("Enemy health : " + String(eHealth));
   gfx->println("Enemy bullet speed : " + String(EbulletSpeed));
@@ -223,16 +224,16 @@ void loop() {
   }
 
   if (fase == 1) { //playing fase
-    if (digitalRead(21) == 0 and y < 94) { //Move down
+    if (Ps3.data.button.down == 1 and y < 94) { //Move down
       y = y + sped;
     }
-    if (digitalRead(22) == 0 and y > 18) { //Move up
+    if (Ps3.data.button.up == 1 and y > 18) { //Move up
       y = y - sped;
     }
-    if (digitalRead(17) == 0 and x < 125) { //Move right
+    if (Ps3.data.button.right == 1 and x < 125) { //Move right
       x = x + sped;
     }
-    if (digitalRead(2) == 0 and  x > 0) { //Move right
+    if (Ps3.data.button.left == 1 and  x > 0) { //Move left
       x = x - sped;
     }
 
