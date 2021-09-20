@@ -299,7 +299,7 @@ void loop() {
 
     for (int i = 0; i < 10; i++) { //firing rockets
       if (rocketX[i] > 0) {
-        gfx->draw16bitRGBBitmap(rocketX[i], rocketY[i], rocket,  24, 12);
+        gfx->draw16bitRGBBitmap(rocketX[i], rocketY[i]+50, rocket,  24, 12);
         rocketX[i] = rocketX[i] + rocketSpeed;
       }
       if (rocketX[i] > 240) {
@@ -312,7 +312,7 @@ void loop() {
 
     for (int j = 0; j < 10; j++) { //did my bulet hit enemy
       if (buletX[j] > ex + 20 && buletY[j] > ey + 2 && buletY[j] < ey + 52 ) {
-        gfx->draw16bitRGBBitmap(buletX[j], buletY[j], ex2,  12, 12);
+        gfx->draw16bitRGBBitmap(buletX[j], buletY[j]+50, ex2,  12, 12);
         if (sound == 1) {
           tone(BUZZER_PIN, NOTE_C5, 12, BUZZER_CHANNEL);
           noTone(BUZZER_PIN, BUZZER_CHANNEL);
