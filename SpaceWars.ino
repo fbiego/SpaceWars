@@ -94,11 +94,11 @@ void setup(void) {
   pinMode(0, INPUT); //LORA built in buttons
   pinMode(35, INPUT);
   digitalWrite(26, 1);
-  tft.init();
-  tft.setRotation(1);
-  tft.fillScreen(TFT_BLACK);
-  tft.setSwapBytes(true);
-  tft.pushImage(0, 0,  240, 135, back2);
+  gfx->init();
+  gfx->setRotation(1);
+  gfx->fillScreen(TFT_BLACK);
+  gfx->setSwapBytes(true);
+  gfx->pushImage(0, 0,  240, 135, back2);
 
 
   for (int i = 0; i < 30; i++) {
@@ -176,38 +176,38 @@ void newLevel()
 
   }
 
-  tft.fillScreen(TFT_BLACK);
-  tft.setCursor(0, 0, 4);
-  tft.print("Level " + String(level));
-  tft.setCursor(0, 22, 2);
+  gfx->fillScreen(TFT_BLACK);
+  gfx->setCursor(0, 0, 4);
+  gfx->print("Level " + String(level));
+  gfx->setCursor(0, 22, 2);
 
-  tft.println("Enemy speed : " + String(es));
-  tft.println("Enemy health : " + String(eHealth));
-  tft.println("Enemy bullet speed : " + String(EbulletSpeed));
-  tft.println("Remaining lives: " + String(lives));
-  tft.println("My speed : " + String(sped));
-  tft.println("Rocket damage : " + String(rDamage));
-  tft.println("Rocket speed : " + String(rocketSpeed));
+  gfx->println("Enemy speed : " + String(es));
+  gfx->println("Enemy health : " + String(eHealth));
+  gfx->println("Enemy bullet speed : " + String(EbulletSpeed));
+  gfx->println("Remaining lives: " + String(lives));
+  gfx->println("My speed : " + String(sped));
+  gfx->println("Rocket damage : " + String(rDamage));
+  gfx->println("Rocket speed : " + String(rocketSpeed));
 
-  tft.pushImage(170, 5,  55, 54, earth[level - 1]);
-  tft.pushImage(170, 61,  72, 72, sens);
+  gfx->pushImage(170, 5,  55, 54, earth[level - 1]);
+  gfx->pushImage(170, 61,  72, 72, sens);
   delay(2600);
 
 
   while (digitalRead(13) == 1) // wait until button a is pressed.............
     int nezz = 0;
 
-  tft.fillScreen(TFT_BLACK);
+  gfx->fillScreen(TFT_BLACK);
 
 
-  tft.drawLine(0, 16, 240, 16, lightblue);
-  tft.drawLine(0, 134, 240, 134, lightblue);
+  gfx->drawLine(0, 16, 240, 16, lightblue);
+  gfx->drawLine(0, 134, 240, 134, lightblue);
 
-  tft.setCursor(200, 0, 2);
-  tft.print(brojac);
+  gfx->setCursor(200, 0, 2);
+  gfx->print(brojac);
 
-  tft.fillRect(120, 3, 70, 7, TFT_GREEN);
-  tft.drawRect(119, 2, 72, 9, TFT_GREY);
+  gfx->fillRect(120, 3, 70, 7, TFT_GREEN);
+  gfx->drawRect(119, 2, 72, 9, TFT_GREY);
 
 }
 
@@ -218,45 +218,45 @@ void loop() {
   if (fase == 0)
   {
     restart();
-    tft.fillScreen(TFT_BLACK);
-    tft.setSwapBytes(true);
-    tft.pushImage(0, 0,  240, 135, back2);
+    gfx->fillScreen(TFT_BLACK);
+    gfx->setSwapBytes(true);
+    gfx->pushImage(0, 0,  240, 135, back2);
     while (digitalRead(13) == 1)
     {
       int nezz = 0;
     }
-    tft.fillScreen(TFT_BLACK);
-    tft.fillScreen(TFT_BLACK);
-    tft.setCursor(0, 0, 4);
-    tft.print("Level " + String(level));
-    tft.setCursor(0, 22, 2);
+    gfx->fillScreen(TFT_BLACK);
+    gfx->fillScreen(TFT_BLACK);
+    gfx->setCursor(0, 0, 4);
+    gfx->print("Level " + String(level));
+    gfx->setCursor(0, 22, 2);
 
-    tft.println("Enemy speed : " + String(es));
-    tft.println("Enemy health : " + String(eHealth));
-    tft.println("Enemy bullet speed : " + String(EbulletSpeed));
-    tft.println("Remaining lives: " + String(lives));
-    tft.println("My speed : " + String(sped));
-    tft.println("Rocket damage : " + String(rDamage));
-    tft.println("Rocket speed : " + String(rocketSpeed));
+    gfx->println("Enemy speed : " + String(es));
+    gfx->println("Enemy health : " + String(eHealth));
+    gfx->println("Enemy bullet speed : " + String(EbulletSpeed));
+    gfx->println("Remaining lives: " + String(lives));
+    gfx->println("My speed : " + String(sped));
+    gfx->println("Rocket damage : " + String(rDamage));
+    gfx->println("Rocket speed : " + String(rocketSpeed));
 
-    tft.pushImage(170, 5,  55, 54, earth[level - 1]);
-    tft.pushImage(170, 61,  72, 72, sens);
+    gfx->pushImage(170, 5,  55, 54, earth[level - 1]);
+    gfx->pushImage(170, 61,  72, 72, sens);
     delay(1000);
 
 
     while (digitalRead(13) == 1) // wait until button a is pressed.............
       int nezz = 0;
 
-    tft.fillScreen(TFT_BLACK);
+    gfx->fillScreen(TFT_BLACK);
 
-    tft.drawLine(0, 16, 240, 16, lightblue);
-    tft.drawLine(0, 134, 240, 134, lightblue);
+    gfx->drawLine(0, 16, 240, 16, lightblue);
+    gfx->drawLine(0, 134, 240, 134, lightblue);
 
-    tft.setCursor(200, 0, 2);
-    tft.print(brojac);
+    gfx->setCursor(200, 0, 2);
+    gfx->print(brojac);
 
-    tft.fillRect(120, 3, 70, 7, TFT_GREEN);
-    tft.drawRect(119, 2, 72, 9, TFT_GREY);
+    gfx->fillRect(120, 3, 70, 7, TFT_GREEN);
+    gfx->drawRect(119, 2, 72, 9, TFT_GREY);
 
 
     fase = 1;
@@ -297,7 +297,7 @@ void loop() {
         rocketY[rcounter] = y + 14;
         rcounter = rcounter + 1;
         ri[rockets] = -100;
-        tft.fillRect(70 + (rockets * 14), 0, 8, 14, TFT_BLACK);
+        gfx->fillRect(70 + (rockets * 14), 0, 8, 14, TFT_BLACK);
       }
     } else
       pom2 = 0;
@@ -312,11 +312,11 @@ void loop() {
       pom3 = 0;
 
     for (int i = 0; i < 30; i++) { //drawStars..........................................
-      tft.drawPixel(spaceX[i], spaceY[i], TFT_BLACK);
+      gfx->drawPixel(spaceX[i], spaceY[i], TFT_BLACK);
       spaceX[i] = spaceX[i] - 0.5;
-      tft.drawPixel(spaceX[i], spaceY[i], TFT_GREY);
+      gfx->drawPixel(spaceX[i], spaceY[i], TFT_GREY);
       if (spaceX[i] < 0) {
-        tft.drawPixel(spaceX[i], spaceY[i], TFT_BLACK);
+        gfx->drawPixel(spaceX[i], spaceY[i], TFT_BLACK);
 
         spaceX[i] = 244;
       }
@@ -324,12 +324,12 @@ void loop() {
 
 
 
-    tft.pushImage(x, y,  49, 40, brod1);
-    tft.pushImage(ex, ey,  55, 54, earth[level - 1]);
+    gfx->pushImage(x, y,  49, 40, brod1);
+    gfx->pushImage(ex, ey,  55, 54, earth[level - 1]);
 
     for (int i = 0; i < 10; i++) { //firing buletts
       if (buletX[i] > 0) {
-        tft.pushImage(buletX[i], buletY[i],  8, 8, bulet);
+        gfx->pushImage(buletX[i], buletY[i],  8, 8, bulet);
         buletX[i] = buletX[i] + 0.6;
       }
       if (buletX[i] > 240)
@@ -338,7 +338,7 @@ void loop() {
 
     for (int i = 0; i < 10; i++) { //firing rockets
       if (rocketX[i] > 0) {
-        tft.pushImage(rocketX[i], rocketY[i],  24, 12, rocket);
+        gfx->pushImage(rocketX[i], rocketY[i],  24, 12, rocket);
         rocketX[i] = rocketX[i] + rocketSpeed;
       }
       if (rocketX[i] > 240)
@@ -352,25 +352,25 @@ void loop() {
     {
       if (buletX[j] > ex + 20 && buletY[j] > ey + 2 && buletY[j] < ey + 52 )
       {
-        tft.pushImage(buletX[j], buletY[j],  12, 12, ex2);
+        gfx->pushImage(buletX[j], buletY[j],  12, 12, ex2);
         if (sound == 1) {
           tone(BUZZER_PIN, NOTE_C5, 12, BUZZER_CHANNEL);
           noTone(BUZZER_PIN, BUZZER_CHANNEL);
         } else {
           delay(12);
         }
-        tft.fillRect(buletX[j], buletY[j], 12, 12, TFT_BLACK);
+        gfx->fillRect(buletX[j], buletY[j], 12, 12, TFT_BLACK);
         buletX[j] = -50;
         brojac = brojac + 1;
-        tft.setCursor(200, 0, 2);
-        tft.print(brojac);
+        gfx->setCursor(200, 0, 2);
+        gfx->print(brojac);
         eHealth--;
         tr = map(eHealth, 0, mHealth, 0, 70);
-        tft.fillRect(120, 3, 70, 7, TFT_BLACK);
-        tft.fillRect(120, 3, tr, 7, TFT_GREEN);
+        gfx->fillRect(120, 3, 70, 7, TFT_BLACK);
+        gfx->fillRect(120, 3, tr, 7, TFT_GREEN);
 
         if (eHealth <= 0) {
-          tft.pushImage(ex, ey,  55, 55, buum);
+          gfx->pushImage(ex, ey,  55, 55, buum);
           tone(BUZZER_PIN, NOTE_E4, 100, BUZZER_CHANNEL);
           tone(BUZZER_PIN, NOTE_D4, 80, BUZZER_CHANNEL);
           tone(BUZZER_PIN, NOTE_G5, 100, BUZZER_CHANNEL);
@@ -394,27 +394,27 @@ void loop() {
     {
       if (rocketX[j] + 18 > ex && rocketY[j] > ey + 2 && rocketY[j] < ey + 52 )
       {
-        tft.pushImage(rocketX[j], rocketY[j],  24, 24, explosion);
+        gfx->pushImage(rocketX[j], rocketY[j],  24, 24, explosion);
         if (sound == 1) {
           tone(BUZZER_PIN, NOTE_C3, 40, BUZZER_CHANNEL);
           noTone(BUZZER_PIN, BUZZER_CHANNEL);
         } else {
           delay(40);
         }
-        tft.fillRect(rocketX[j], rocketY[j], 24, 24, TFT_BLACK);
+        gfx->fillRect(rocketX[j], rocketY[j], 24, 24, TFT_BLACK);
         //delay(30);
 
         rocketX[j] = -50;
         brojac = brojac + 12;
-        tft.setCursor(200, 0, 2);
-        tft.print(brojac);
+        gfx->setCursor(200, 0, 2);
+        gfx->print(brojac);
         eHealth = eHealth - rDamage;
         tr = map(eHealth, 0, mHealth, 0, 70);
-        tft.fillRect(120, 3, 70, 7, TFT_BLACK);
-        tft.fillRect(120, 3, tr, 7, TFT_GREEN);
+        gfx->fillRect(120, 3, 70, 7, TFT_BLACK);
+        gfx->fillRect(120, 3, tr, 7, TFT_GREEN);
 
         if (eHealth <= 0) {
-          tft.pushImage(ex, ey,  55, 55, buum);
+          gfx->pushImage(ex, ey,  55, 55, buum);
           tone(BUZZER_PIN, NOTE_E4, 100, BUZZER_CHANNEL);
           tone(BUZZER_PIN, NOTE_D4, 80, BUZZER_CHANNEL);
           tone(BUZZER_PIN, NOTE_G5, 100, BUZZER_CHANNEL);
@@ -439,10 +439,10 @@ void loop() {
       {
         EbuletX[j] = -50;
         ly[lives - 1] = -40;
-        tft.fillRect((lives - 1) * 14, 0, 14, 14, TFT_BLACK);
+        gfx->fillRect((lives - 1) * 14, 0, 14, 14, TFT_BLACK);
         lives--;
         if (lives == 0) {
-          tft.pushImage(x, y,  55, 55, buum);
+          gfx->pushImage(x, y,  55, 55, buum);
           tone(BUZZER_PIN, NOTE_G4, 100, BUZZER_CHANNEL);
           tone(BUZZER_PIN, NOTE_B4, 80, BUZZER_CHANNEL);
           tone(BUZZER_PIN, NOTE_C5, 100, BUZZER_CHANNEL);
@@ -450,7 +450,7 @@ void loop() {
           tone(BUZZER_PIN, NOTE_F4, 280, BUZZER_CHANNEL);
           noTone(BUZZER_PIN, BUZZER_CHANNEL);
           delay(500);
-          tft.fillScreen(TFT_BLACK);
+          gfx->fillScreen(TFT_BLACK);
           fase = 2;
         }
 
@@ -488,16 +488,16 @@ void loop() {
 
     for (int i = 0; i < 10; i++) { //enemy shoots
       if (EbuletX[i] > -10) {
-        tft.pushImage(EbuletX[i], EbuletY[i],  7, 7, ebullet);
+        gfx->pushImage(EbuletX[i], EbuletY[i],  7, 7, ebullet);
         EbuletX[i] = EbuletX[i] - EbulletSpeed;
       }
 
     }
 
     for (int i = 0; i < 4; i++) //draw lifes
-      tft.pushImage(i * 14, ly[i],  12, 11, life);
+      gfx->pushImage(i * 14, ly[i],  12, 11, life);
     for (int i = 0; i < 3; i++) //draw lifes
-      tft.pushImage(70 + (i * 14), ri[i] ,  8, 14, ricon);
+      gfx->pushImage(70 + (i * 14), ri[i] ,  8, 14, ricon);
 
 
     fireCount++;
@@ -521,12 +521,12 @@ void loop() {
   if (fase == 2) //game over fase
   {
 
-    tft.fillScreen(TFT_BLACK);
-    tft.pushImage(0, 0,  240, 135, gameOver);
-    tft.setCursor(24, 54, 2);
-    tft.print("Score : " + String(brojac));
-    tft.setCursor(24, 69, 2);
-    tft.print("Level : " + String(level));
+    gfx->fillScreen(TFT_BLACK);
+    gfx->pushImage(0, 0,  240, 135, gameOver);
+    gfx->setCursor(24, 54, 2);
+    gfx->print("Score : " + String(brojac));
+    gfx->setCursor(24, 69, 2);
+    gfx->print("Level : " + String(level));
     while (digitalRead(13) == 1)
     {
       int nezz = 0;
