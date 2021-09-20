@@ -106,14 +106,14 @@ void setup(void) {
     spaceY[i] = random(18, 132);
   }
 
-  while (digitalRead(13) == 1) // wait until button a is pressed.............
+  while (digitalRead(13) == 1){ // wait until button a is pressed.............
     int nezz = 0;
+  }
   digitalWrite(26, 0);
 
 }
 
-void restart()
-{
+void restart(){
   counter = 0;
   rcounter = 0;
   Ecounter = 0;
