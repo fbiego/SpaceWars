@@ -323,6 +323,7 @@ void loop() {
         buletX[j] = -50;
         brojac = brojac + 1;
         gfx->setCursor(200, 0);
+        gfx->setTextColor(WHITE, BLACK);
         gfx->print(brojac);
         eHealth--;
         tr = map(eHealth, 0, mHealth, 0, 70);
