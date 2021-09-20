@@ -222,9 +222,9 @@ void loop() {
     delay(1000);
 
 
-    while (digitalRead(13) == 1) // wait until button a is pressed.............
+    while (digitalRead(13) == 1){ // wait until button a is pressed.............
       int nezz = 0;
-
+    }
     gfx->fillScreen(BLACK);
 
     gfx->drawLine(0, 16, 240, 16, lightblue);
