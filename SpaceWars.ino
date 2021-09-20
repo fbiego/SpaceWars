@@ -91,7 +91,7 @@ void setup() {
   Ps3.begin(mac);
   gfx->begin();
   gfx->fillScreen(BLACK);
-  
+
   gfx->draw16bitRGBBitmap(0, 0, back2, 240, 135);
 
 
@@ -175,8 +175,8 @@ void draw() {
   gfx->setTextSize(2);
   gfx->print("Level " + String(level));
   gfx->setCursor(0, 22);
-gfx->setTextSize(1);
-gfx->println("   Enemy speed : " + String(es));
+  gfx->setTextSize(1);
+  gfx->println("   Enemy speed : " + String(es));
   gfx->println("   Enemy health : " + String(eHealth));
   gfx->println("   Enemy bullet speed : " + String(EbulletSpeed));
   gfx->println("   Remaining lives: " + String(lives));
@@ -212,7 +212,7 @@ void loop() {
   if (fase == 0) {
     restart();
     gfx->fillScreen(BLACK);
-    
+
     gfx->draw16bitRGBBitmap(0, 0, back2,  240, 135);
     while (st == 0) { // wait until button a is pressed.............
       Serial.print("");
