@@ -267,8 +267,8 @@ void loop() {
     }
 
 
-    if (digitalRead(12) == 0 && rockets > 0) //Rocket button B button
-    { if (pom2 == 0) {
+    if (digitalRead(12) == 0 && rockets > 0){ //Rocket button B button
+      if (pom2 == 0) {
         pom2 = 1;
         rockets--;
         rocketX[rcounter] = x + 34;
@@ -277,18 +277,18 @@ void loop() {
         ri[rockets] = -100;
         gfx->fillRect(70 + (rockets * 14), 0, 8, 14, TFT_BLACK);
       }
-    } else
+    } else {
       pom2 = 0;
-
-    if (digitalRead(35) == 0) //buton 35 , on and off sound
-    { if (pom3 == 0) {
+    }
+    if (digitalRead(35) == 0){ //buton 35 , on and off sound
+      if (pom3 == 0) {
         pom3 = 1;
         sound = !sound;
 
       }
-    } else
+    } else {
       pom3 = 0;
-
+    }
     for (int i = 0; i < 30; i++) { //drawStars..........................................
       gfx->drawPixel(spaceX[i], spaceY[i], TFT_BLACK);
       spaceX[i] = spaceX[i] - 0.5;
