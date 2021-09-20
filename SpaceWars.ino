@@ -359,7 +359,7 @@ void loop() {
         } else {
           delay(40);
         }
-        gfx->fillRect(rocketX[j], rocketY[j], 24, 24, BLACK);
+        gfx->fillRect(rocketX[j], rocketY[j]+50, 24, 24, BLACK);
         //delay(30);
 
         rocketX[j] = -50;
