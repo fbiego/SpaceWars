@@ -409,10 +409,8 @@ void loop() {
     }
 
 
-    for (int j = 0; j < 10; j++) //Am I hit
-    {
-      if (EbuletX[j] < x + 30 && EbuletX[j] > x + 4 && EbuletY[j] > y + 4 && EbuletY[j] < y + 36 )
-      {
+    for (int j = 0; j < 10; j++){ //Am I hit
+      if (EbuletX[j] < x + 30 && EbuletX[j] > x + 4 && EbuletY[j] > y + 4 && EbuletY[j] < y + 36 ){
         EbuletX[j] = -50;
         ly[lives - 1] = -40;
         gfx->fillRect((lives - 1) * 14, 0, 14, 14, TFT_BLACK);
