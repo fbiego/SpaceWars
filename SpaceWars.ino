@@ -161,9 +161,9 @@ void newLevel() {
 
 void draw() {
   gfx->fillScreen(BLACK);
-  gfx->setCursor(0, 0, 4);
+  gfx->setCursor(0, 0);
   gfx->print("Level " + String(level));
-  gfx->setCursor(0, 22, 2);
+  gfx->setCursor(0, 22);
 
   gfx->println("Enemy speed : " + String(es));
   gfx->println("Enemy health : " + String(eHealth));
