@@ -187,7 +187,7 @@ void draw() {
   gfx->drawLine(0, 16, 240, 16, lightblue);
   gfx->drawLine(0, 134, 240, 134, lightblue);
 
-  gfx->setCursor(200, 0, 2);
+  gfx->setCursor(200, 0);
   gfx->print(brojac);
 
   gfx->fillRect(120, 3, 70, 7, TFT_GREEN);
