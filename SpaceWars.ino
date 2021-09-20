@@ -488,11 +488,12 @@ void loop() {
       rcounter = 0;
     }
 
-    if (Ecounter == 9)
+    if (Ecounter == 9){
       Ecounter = 0;
+    }
   }
-  if (fase == 2) //game over fase
-  {
+  if (fase == 2){ //game over fase
+
 
     gfx->fillScreen(BLACK);
     gfx->pushImage(0, 0,  240, 135, gameOver);
@@ -500,8 +501,7 @@ void loop() {
     gfx->print("Score : " + String(brojac));
     gfx->setCursor(24, 69, 2);
     gfx->print("Level : " + String(level));
-    while (digitalRead(13) == 1)
-    {
+    while (digitalRead(13) == 1) {
       int nezz = 0;
     }
     fase = 0;
