@@ -106,6 +106,14 @@ void setup() {
 
 }
 
+void pad(){
+  if (Psp){
+    gfx->draw16bitRGBBitmap(112, 5, gamepad,  16, 16);
+  } else {
+    gfx->fillRect(112, 5, 16, 16, BLACK);
+  }
+}
+
 void restart() {
   counter = 0;
   rcounter = 0;
