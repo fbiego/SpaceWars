@@ -319,7 +319,7 @@ void loop() {
         gfx->fillRect(120, 3, tr, 7, GREEN);
 
         if (eHealth <= 0) {
-          gfx->draw16bitRGBBitmap(ex, ey,  55, 55, buum);
+          gfx->draw16bitRGBBitmap(ex, ey, buum,  55, 55);
           tone(BUZZER_PIN, NOTE_E4, 100, BUZZER_CHANNEL);
           tone(BUZZER_PIN, NOTE_D4, 80, BUZZER_CHANNEL);
           tone(BUZZER_PIN, NOTE_G5, 100, BUZZER_CHANNEL);
