@@ -368,10 +368,8 @@ void loop() {
     }
 
 
-    for (int j = 0; j < 10; j++) //did my ROCKET hit enemy
-    {
-      if (rocketX[j] + 18 > ex && rocketY[j] > ey + 2 && rocketY[j] < ey + 52 )
-      {
+    for (int j = 0; j < 10; j++){ //did my ROCKET hit enemy
+      if (rocketX[j] + 18 > ex && rocketY[j] > ey + 2 && rocketY[j] < ey + 52 ){
         gfx->pushImage(rocketX[j], rocketY[j],  24, 24, explosion);
         if (sound == 1) {
           tone(BUZZER_PIN, NOTE_C3, 40, BUZZER_CHANNEL);
