@@ -365,6 +365,7 @@ void loop() {
         rocketX[j] = -50;
         brojac = brojac + 12;
         gfx->setCursor(200, 50);
+        gfx->setTextColor(WHITE, BLACK);
         gfx->print(brojac);
         eHealth = eHealth - rDamage;
         tr = map(eHealth, 0, mHealth, 0, 70);
@@ -480,6 +481,7 @@ void loop() {
     gfx->fillScreen(BLACK);
     gfx->draw16bitRGBBitmap(0, 50, gameOver,  240, 135);
     gfx->setCursor(24, 104);
+    gfx->setTextColor(WHITE);
     gfx->print("Score : " + String(brojac));
     gfx->setCursor(24, 120);
     gfx->print("Level : " + String(level));
