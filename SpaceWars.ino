@@ -328,10 +328,8 @@ void loop() {
     //delay(1);
 
 
-    for (int j = 0; j < 10; j++) //did my bulet hit enemy
-    {
-      if (buletX[j] > ex + 20 && buletY[j] > ey + 2 && buletY[j] < ey + 52 )
-      {
+    for (int j = 0; j < 10; j++){ //did my bulet hit enemy
+      if (buletX[j] > ex + 20 && buletY[j] > ey + 2 && buletY[j] < ey + 52 ){
         gfx->pushImage(buletX[j], buletY[j],  12, 12, ex2);
         if (sound == 1) {
           tone(BUZZER_PIN, NOTE_C5, 12, BUZZER_CHANNEL);
