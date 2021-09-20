@@ -97,7 +97,7 @@ void setup() {
 
   for (int i = 0; i < 30; i++) {
     spaceX[i] = random(5, 235);
-    spaceY[i] = random(18, 132);
+    spaceY[i] = random(68, 182);
   }
 
   while (st == 0) { // wait until button a is pressed.............
