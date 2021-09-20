@@ -90,13 +90,13 @@ void setup(void) {
     spaceY[i] = random(18, 132);
   }
 
-  while (digitalRead(13) == 1){ // wait until button a is pressed.............
+  while (digitalRead(13) == 1) { // wait until button a is pressed.............
     int nezz = 0;
   }
 
 }
 
-void restart(){
+void restart() {
   counter = 0;
   rcounter = 0;
   Ecounter = 0;
@@ -149,7 +149,7 @@ void newLevel() {
 
   ey = 44;
 
-  for (int i = 0; i < 10; i++){
+  for (int i = 0; i < 10; i++) {
     buletX[i] = -20;
     EbuletX[i] = -20;
     rocketX[i] = -20;
@@ -174,7 +174,7 @@ void newLevel() {
   delay(2600);
 
 
-  while (digitalRead(13) == 1){ // wait until button a is pressed.............
+  while (digitalRead(13) == 1) { // wait until button a is pressed.............
     int nezz = 0;
   }
   gfx->fillScreen(BLACK);
@@ -222,7 +222,7 @@ void loop() {
     delay(1000);
 
 
-    while (digitalRead(13) == 1){ // wait until button a is pressed.............
+    while (digitalRead(13) == 1) { // wait until button a is pressed.............
       int nezz = 0;
     }
     gfx->fillScreen(BLACK);
@@ -241,20 +241,20 @@ void loop() {
   }
 
   if (fase == 1) { //playing fase
-    if (digitalRead(21) == 0 and y < 94){ //Move down
+    if (digitalRead(21) == 0 and y < 94) { //Move down
       y = y + sped;
     }
-    if (digitalRead(22) == 0 and y > 18){ //Move up
+    if (digitalRead(22) == 0 and y > 18) { //Move up
       y = y - sped;
     }
-    if (digitalRead(17) == 0 and x < 125){ //Move right
+    if (digitalRead(17) == 0 and x < 125) { //Move right
       x = x + sped;
     }
-    if (digitalRead(2) == 0 and  x > 0){ //Move right
+    if (digitalRead(2) == 0 and  x > 0) { //Move right
       x = x - sped;
     }
 
-    if (digitalRead(13) == 0 ){ //fire button A button
+    if (digitalRead(13) == 0 ) { //fire button A button
       if (pom == 0) {
         pom = 1;
 
@@ -267,7 +267,7 @@ void loop() {
     }
 
 
-    if (digitalRead(12) == 0 && rockets > 0){ //Rocket button B button
+    if (digitalRead(12) == 0 && rockets > 0) { //Rocket button B button
       if (pom2 == 0) {
         pom2 = 1;
         rockets--;
@@ -280,7 +280,7 @@ void loop() {
     } else {
       pom2 = 0;
     }
-    if (digitalRead(35) == 0){ //buton 35 , on and off sound
+    if (digitalRead(35) == 0) { //buton 35 , on and off sound
       if (pom3 == 0) {
         pom3 = 1;
         sound = !sound;
@@ -310,7 +310,7 @@ void loop() {
         gfx->pushImage(buletX[i], buletY[i],  8, 8, bulet);
         buletX[i] = buletX[i] + 0.6;
       }
-      if (buletX[i] > 240){
+      if (buletX[i] > 240) {
         buletX[i] = -30;
       }
     }
@@ -320,7 +320,7 @@ void loop() {
         gfx->pushImage(rocketX[i], rocketY[i],  24, 12, rocket);
         rocketX[i] = rocketX[i] + rocketSpeed;
       }
-      if (rocketX[i] > 240){
+      if (rocketX[i] > 240) {
         rocketX[i] = -30;
       }
     }
@@ -328,8 +328,8 @@ void loop() {
     //delay(1);
 
 
-    for (int j = 0; j < 10; j++){ //did my bulet hit enemy
-      if (buletX[j] > ex + 20 && buletY[j] > ey + 2 && buletY[j] < ey + 52 ){
+    for (int j = 0; j < 10; j++) { //did my bulet hit enemy
+      if (buletX[j] > ex + 20 && buletY[j] > ey + 2 && buletY[j] < ey + 52 ) {
         gfx->pushImage(buletX[j], buletY[j],  12, 12, ex2);
         if (sound == 1) {
           tone(BUZZER_PIN, NOTE_C5, 12, BUZZER_CHANNEL);
@@ -368,8 +368,8 @@ void loop() {
     }
 
 
-    for (int j = 0; j < 10; j++){ //did my ROCKET hit enemy
-      if (rocketX[j] + 18 > ex && rocketY[j] > ey + 2 && rocketY[j] < ey + 52 ){
+    for (int j = 0; j < 10; j++) { //did my ROCKET hit enemy
+      if (rocketX[j] + 18 > ex && rocketY[j] > ey + 2 && rocketY[j] < ey + 52 ) {
         gfx->pushImage(rocketX[j], rocketY[j],  24, 24, explosion);
         if (sound == 1) {
           tone(BUZZER_PIN, NOTE_C3, 40, BUZZER_CHANNEL);
@@ -409,8 +409,8 @@ void loop() {
     }
 
 
-    for (int j = 0; j < 10; j++){ //Am I hit
-      if (EbuletX[j] < x + 30 && EbuletX[j] > x + 4 && EbuletY[j] > y + 4 && EbuletY[j] < y + 36 ){
+    for (int j = 0; j < 10; j++) { //Am I hit
+      if (EbuletX[j] < x + 30 && EbuletX[j] > x + 4 && EbuletY[j] > y + 4 && EbuletY[j] < y + 36 ) {
         EbuletX[j] = -50;
         ly[lives - 1] = -40;
         gfx->fillRect((lives - 1) * 14, 0, 14, 14, TFT_BLACK);
@@ -443,13 +443,13 @@ void loop() {
     }
 
     ey = ey + es;
-    if (ey > 80){
+    if (ey > 80) {
       es = es * -1;
     }
-    if (ey < 18){
+    if (ey < 18) {
       es = es * -1;
     }
-    if (blinkTime > 0){
+    if (blinkTime > 0) {
       blinkTime++;
     }
     if (blinkTime > 2) {
@@ -466,33 +466,33 @@ void loop() {
 
     }
 
-    for (int i = 0; i < 4; i++){ //draw lifes
+    for (int i = 0; i < 4; i++) { //draw lifes
       gfx->pushImage(i * 14, ly[i],  12, 11, life);
     }
-    for (int i = 0; i < 3; i++){ //draw lifes
+    for (int i = 0; i < 3; i++) { //draw lifes
       gfx->pushImage(70 + (i * 14), ri[i] ,  8, 14, ricon);
     }
 
     fireCount++;
-    if (fireTime == fireCount){
+    if (fireTime == fireCount) {
       EbuletX[Ecounter] = ex + 5;
       EbuletY[Ecounter] = ey + 24;
       fireCount = 0;
       fireTime = random(110 - (level * 15), 360 - (level * 30));
       Ecounter++;
     }
-    if (counter == 9){
+    if (counter == 9) {
       counter = 0;
     }
-    if (rcounter == 3){
+    if (rcounter == 3) {
       rcounter = 0;
     }
 
-    if (Ecounter == 9){
+    if (Ecounter == 9) {
       Ecounter = 0;
     }
   }
-  if (fase == 2){ //game over fase
+  if (fase == 2) { //game over fase
 
 
     gfx->fillScreen(BLACK);
