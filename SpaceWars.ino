@@ -85,6 +85,10 @@ void notify() {
 }
 
 void setup() {
+  Serial.begin(115200);
+  Ps3.attach(notify);
+  //Ps3.attachOnConnect(onConnect);
+  Ps3.begin(mac);
   gfx->begin();
   gfx->setRotation(1);
   gfx->fillScreen(BLACK);
