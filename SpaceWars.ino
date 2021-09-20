@@ -438,10 +438,10 @@ void loop() {
     }
 
     for (int i = 0; i < 4; i++) { //draw lifes
-      gfx->draw16bitRGBBitmap(i * 14, ly[i],  12, 11, life);
+      gfx->draw16bitRGBBitmap(i * 14, ly[i], life,  12, 11);
     }
     for (int i = 0; i < 3; i++) { //draw lifes
-      gfx->draw16bitRGBBitmap(70 + (i * 14), ri[i] ,  8, 14, ricon);
+      gfx->draw16bitRGBBitmap(70 + (i * 14), ri[i], ricon ,  8, 14);
     }
 
     fireCount++;
@@ -467,10 +467,10 @@ void loop() {
 
 
     gfx->fillScreen(BLACK);
-    gfx->draw16bitRGBBitmap(0, 0,  240, 135, gameOver);
-    gfx->setCursor(24, 54, 2);
+    gfx->draw16bitRGBBitmap(0, 0, gameOver,  240, 135);
+    gfx->setCursor(24, 54);
     gfx->print("Score : " + String(brojac));
-    gfx->setCursor(24, 69, 2);
+    gfx->setCursor(24, 69);
     gfx->print("Level : " + String(level));
     while (digitalRead(13) == 1) {
       int nezz = 0;
