@@ -79,21 +79,6 @@ float spaceY[30];
 
 
 void setup(void) {
-
-  pinMode(21, INPUT_PULLUP);
-  pinMode(22, INPUT_PULLUP);
-  pinMode(17, INPUT_PULLUP);
-  pinMode(2, INPUT_PULLUP);
-  pinMode(12, INPUT_PULLUP); //fire2 B
-  pinMode(13, INPUT_PULLUP); //fire1 A
-  pinMode(25, OUTPUT); //led2
-  pinMode(33, OUTPUT); //led1
-  pinMode(26, OUTPUT); //led3
-  pinMode(15, INPUT_PULLUP); //stisak
-  pinMode(13, INPUT_PULLUP); //buttonB
-  pinMode(0, INPUT); //LORA built in buttons
-  pinMode(35, INPUT);
-  digitalWrite(26, 1);
   gfx->init();
   gfx->setRotation(1);
   gfx->fillScreen(TFT_BLACK);
