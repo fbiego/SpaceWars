@@ -90,9 +90,8 @@ void setup() {
   //Ps3.attachOnConnect(onConnect);
   Ps3.begin(mac);
   gfx->begin();
-  gfx->setRotation(1);
   gfx->fillScreen(BLACK);
-  //gfx->setSwapBytes(true);
+  
   gfx->draw16bitRGBBitmap(0, 0, back2, 240, 135);
 
 
@@ -213,7 +212,7 @@ void loop() {
   if (fase == 0) {
     restart();
     gfx->fillScreen(BLACK);
-    //gfx->setSwapBytes(true);
+    
     gfx->draw16bitRGBBitmap(0, 0, back2,  240, 135);
     while (st == 0) { // wait until button a is pressed.............
       Serial.print("");
