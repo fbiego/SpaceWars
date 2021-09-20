@@ -284,12 +284,12 @@ void loop() {
 
 
 
-    gfx->draw16bitRGBBitmap(x, y, brod1,  49, 40);
-    gfx->draw16bitRGBBitmap(ex, ey, earth[level - 1],  55, 54);
+    gfx->draw16bitRGBBitmap(x, y+50, brod1,  49, 40);
+    gfx->draw16bitRGBBitmap(ex, ey+50, earth[level - 1],  55, 54);
 
     for (int i = 0; i < 10; i++) { //firing buletts
       if (buletX[i] > 0) {
-        gfx->draw16bitRGBBitmap(buletX[i], buletY[i], bulet,  8, 8);
+        gfx->draw16bitRGBBitmap(buletX[i], buletY[i]+50, bulet,  8, 8);
         buletX[i] = buletX[i] + 0.6;
       }
       if (buletX[i] > 240) {
