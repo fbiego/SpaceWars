@@ -1,4 +1,5 @@
 #include <Arduino_GFX_Library.h>
+#include <Tone32.h>
 #include "rocket.h"
 #include "brod1.h"
 #include "bulet.h"
@@ -13,8 +14,6 @@
 #include "sens.h"
 #include "buum.h"
 #include "gameOver.h"
-
-#include <Tone32.h>
 
 #define BUZZER_PIN 27
 #define BUZZER_CHANNEL 0
