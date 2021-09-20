@@ -1,6 +1,4 @@
-
-#include <TFT_eSPI.h> // Hardware-specific library
-#include <SPI.h>
+#include <Arduino_GFX_Library.h>
 #include "rocket.h"
 #include "brod1.h"
 #include "bulet.h"
@@ -16,8 +14,6 @@
 #include "buum.h"
 #include "gameOver.h"
 
-
-
 #include <Tone32.h>
 
 #define BUZZER_PIN 27
@@ -28,7 +24,9 @@
 #define orange 0xFB60
 #define purple 0xFB9B
 
-TFT_eSPI tft = TFT_eSPI();
+Arduino_DataBus *bus = new Arduino_HWSPI(2 /* DC */, 15 /* CS */);
+Arduino_GFX *gfx = new Arduino_GC9A01(bus, 4, 0 /* rotation */, true /* IPS */);
+
 int brojac = 0; // Invoke custom library
 float buletX[10] = { -20, -20, -20, -20, -20, -20, -20, -20, -20, -20};
 float buletY[10] = { -20, -20, -20, -20, -20, -20, -20, -20, -20, -20};
