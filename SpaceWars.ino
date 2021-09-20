@@ -195,14 +195,14 @@ void draw() {
   gfx->fillScreen(BLACK);
 
 
-  gfx->drawLine(0, 16, 240, 16, lightblue);
-  gfx->drawLine(0, 134, 240, 134, lightblue);
+  gfx->drawLine(0, 66, 240, 66, lightblue);
+  gfx->drawLine(0, 184, 240, 184, lightblue);
 
-  gfx->setCursor(200, 0);
+  gfx->setCursor(200, 50);
   gfx->print(brojac);
 
-  gfx->fillRect(120, 3, 70, 7, GREEN);
-  gfx->drawRect(119, 2, 72, 9, GREY);
+  gfx->fillRect(120, 53, 70, 57, GREEN);
+  gfx->drawRect(119, 52, 72, 59, GREY);
 }
 
 
@@ -213,7 +213,7 @@ void loop() {
     restart();
     gfx->fillScreen(BLACK);
 
-    gfx->draw16bitRGBBitmap(0, 0, back2,  240, 135);
+    gfx->draw16bitRGBBitmap(0, 50, back2,  240, 135);
     while (st == 0) { // wait until button a is pressed.............
       Serial.print("");
     }
@@ -257,7 +257,7 @@ void loop() {
         rocketY[rcounter] = y + 14;
         rcounter = rcounter + 1;
         ri[rockets] = -100;
-        gfx->fillRect(70 + (rockets * 14), 0, 8, 14, BLACK);
+        gfx->fillRect(70 + (rockets * 14), 50, 8, 14, BLACK);
       }
     } else {
       pom2 = 0;
