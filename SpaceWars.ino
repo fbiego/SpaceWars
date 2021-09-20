@@ -15,6 +15,7 @@
 #include "sens.h"
 #include "buum.h"
 #include "gameOver.h"
+#include "gamepad.h"
 
 #define BUZZER_PIN 27
 #define BUZZER_CHANNEL 0
@@ -107,8 +108,8 @@ void setup() {
 
 }
 
-void pad(){
-  if (Ps3.isConnected()){
+void pad() {
+  if (Ps3.isConnected()) {
     gfx->draw16bitRGBBitmap(112, 5, gamepad,  16, 16);
   } else {
     gfx->fillRect(112, 5, 16, 16, BLACK);
