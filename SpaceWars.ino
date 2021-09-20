@@ -301,7 +301,7 @@ void loop() {
 
     for (int j = 0; j < 10; j++) { //did my bulet hit enemy
       if (buletX[j] > ex + 20 && buletY[j] > ey + 2 && buletY[j] < ey + 52 ) {
-        gfx->draw16bitRGBBitmap(buletX[j], buletY[j],  12, 12, ex2);
+        gfx->draw16bitRGBBitmap(buletX[j], buletY[j], ex2,  12, 12);
         if (sound == 1) {
           tone(BUZZER_PIN, NOTE_C5, 12, BUZZER_CHANNEL);
           noTone(BUZZER_PIN, BUZZER_CHANNEL);
