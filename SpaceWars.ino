@@ -201,8 +201,8 @@ void draw() {
   gfx->setCursor(200, 50);
   gfx->print(brojac);
 
-  gfx->fillRect(120, 53, 70, 57, GREEN);
-  gfx->drawRect(119, 52, 72, 59, GREY);
+  gfx->fillRect(120, 53, 70, 7, GREEN);
+  gfx->drawRect(119, 52, 72, 9, GREY);
 }
 
 
@@ -326,8 +326,8 @@ void loop() {
         gfx->print(brojac);
         eHealth--;
         tr = map(eHealth, 0, mHealth, 0, 70);
-        gfx->fillRect(120, 53, 70, 57, BLACK);
-        gfx->fillRect(120, 53, tr, 57, GREEN);
+        gfx->fillRect(120, 53, 70, 7, BLACK);
+        gfx->fillRect(120, 53, tr, 7, GREEN);
 
         if (eHealth <= 0) {
           gfx->draw16bitRGBBitmap(ex, ey+50, buum,  55, 55);
@@ -368,8 +368,8 @@ void loop() {
         gfx->print(brojac);
         eHealth = eHealth - rDamage;
         tr = map(eHealth, 0, mHealth, 0, 70);
-        gfx->fillRect(120, 53, 70, 57, BLACK);
-        gfx->fillRect(120, 53, tr, 57, GREEN);
+        gfx->fillRect(120, 53, 70, 7, BLACK);
+        gfx->fillRect(120, 53, tr, 7, GREEN);
 
         if (eHealth <= 0) {
           gfx->draw16bitRGBBitmap(ex, ey+50, buum,  55, 55);
