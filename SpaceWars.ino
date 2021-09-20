@@ -173,8 +173,8 @@ void draw() {
   gfx->println("Rocket damage : " + String(rDamage));
   gfx->println("Rocket speed : " + String(rocketSpeed));
 
-  gfx->draw16bitRGBBitmap(170, 5,  55, 54, earth[level - 1]);
-  gfx->draw16bitRGBBitmap(170, 61,  72, 72, sens);
+  gfx->draw16bitRGBBitmap(170, 5, earth[level - 1],  55, 54);
+  gfx->draw16bitRGBBitmap(170, 61, sens,  72, 72);
   delay(2600);
 
 
