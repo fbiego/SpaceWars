@@ -387,7 +387,7 @@ void loop() {
         gfx->fillRect((lives - 1) * 14, 0, 14, 14, BLACK);
         lives--;
         if (lives == 0) {
-          gfx->draw16bitRGBBitmap(x, y,  55, 55, buum);
+          gfx->draw16bitRGBBitmap(x, y, buum,  55, 55);
           tone(BUZZER_PIN, NOTE_G4, 100, BUZZER_CHANNEL);
           tone(BUZZER_PIN, NOTE_B4, 80, BUZZER_CHANNEL);
           tone(BUZZER_PIN, NOTE_C5, 100, BUZZER_CHANNEL);
