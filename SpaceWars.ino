@@ -481,11 +481,12 @@ void loop() {
       fireTime = random(110 - (level * 15), 360 - (level * 30));
       Ecounter++;
     }
-    if (counter == 9)
+    if (counter == 9){
       counter = 0;
-
-    if (rcounter == 3)
+    }
+    if (rcounter == 3){
       rcounter = 0;
+    }
 
     if (Ecounter == 9)
       Ecounter = 0;
