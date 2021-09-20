@@ -77,7 +77,7 @@ float spaceX[30];
 float spaceY[30];
 
 
-void setup(void) {
+void setup() {
   gfx->init();
   gfx->setRotation(1);
   gfx->fillScreen(BLACK);
