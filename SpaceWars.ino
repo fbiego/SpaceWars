@@ -134,8 +134,7 @@ void restart(){
 }
 
 
-void newLevel()
-{
+void newLevel() {
   level++;
   sped = sped + 0.05;
   EbulletSpeed = EbulletSpeed + 0.1;
@@ -150,8 +149,7 @@ void newLevel()
 
   ey = 44;
 
-  for (int i = 0; i < 10; i++)
-  {
+  for (int i = 0; i < 10; i++){
     buletX[i] = -20;
     EbuletX[i] = -20;
     rocketX[i] = -20;
