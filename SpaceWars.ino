@@ -82,7 +82,7 @@ void setup() {
   gfx->setRotation(1);
   gfx->fillScreen(BLACK);
   //gfx->setSwapBytes(true);
-  gfx->draw16bitRGBBitmap(0, 0,  240, 135, back2);
+  gfx->draw16bitRGBBitmap(0, 0, back2, 240, 135);
 
 
   for (int i = 0; i < 30; i++) {
