@@ -214,9 +214,9 @@ void loop() {
     gfx->fillScreen(BLACK);
     //gfx->setSwapBytes(true);
     gfx->draw16bitRGBBitmap(0, 0, back2,  240, 135);
-    while (digitalRead(13) == 1) {
-      int nezz = 0;
-    }
+    while (st == 0) { // wait until button a is pressed.............
+    Serial.print("");
+  }
     draw();
 
     fase = 1;
