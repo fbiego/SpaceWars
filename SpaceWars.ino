@@ -81,7 +81,7 @@ uint8_t mac[] = {1, 2, 3, 4, 5, 6};
 int st = 0;
 
 void notify() {
-  st = Ps3.data.button.start;
+  st = Ps3.data.button.circle;
 }
 
 void setup() {
@@ -341,7 +341,7 @@ void loop() {
           delay(700);
           newLevel();
         }
-        digitalWrite(25, 1);
+        //digitalWrite(25, 1);
         blinkTime = 1;
 
 
@@ -383,7 +383,7 @@ void loop() {
           delay(700);
           newLevel();
         }
-        digitalWrite(25, 0);
+        //digitalWrite(25, 0);
         blinkTime = 1;
 
 
@@ -412,7 +412,7 @@ void loop() {
         }
 
 
-        digitalWrite(33, 1);
+        //digitalWrite(33, 1);
         blinkTime = 1;
         if (sound == 1) {
           tone(BUZZER_PIN, NOTE_C6, 4, BUZZER_CHANNEL);
@@ -436,8 +436,8 @@ void loop() {
       blinkTime++;
     }
     if (blinkTime > 2) {
-      digitalWrite(25, 0);
-      digitalWrite(33, 0);
+      //digitalWrite(25, 0);
+      //digitalWrite(33, 0);
       blinkTime = 0;
     }
 
