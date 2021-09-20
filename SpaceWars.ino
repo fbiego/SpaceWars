@@ -466,15 +466,15 @@ void loop() {
 
     }
 
-    for (int i = 0; i < 4; i++) //draw lifes
+    for (int i = 0; i < 4; i++){ //draw lifes
       gfx->pushImage(i * 14, ly[i],  12, 11, life);
-    for (int i = 0; i < 3; i++) //draw lifes
+    }
+    for (int i = 0; i < 3; i++){ //draw lifes
       gfx->pushImage(70 + (i * 14), ri[i] ,  8, 14, ricon);
-
+    }
 
     fireCount++;
-    if (fireTime == fireCount)
-    {
+    if (fireTime == fireCount){
       EbuletX[Ecounter] = ex + 5;
       EbuletY[Ecounter] = ey + 24;
       fireCount = 0;
