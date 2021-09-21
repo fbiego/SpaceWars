@@ -339,7 +339,7 @@ void loop() {
         buletX[j] = -50;
         brojac++;
         eHealth--;
-        gfx->setCursor(200, 0);
+        gfx->setCursor(200, 50);
         gfx->setTextColor(WHITE, BLACK);
         gfx->print(brojac);
         gfx->setCursor(130, 40);
