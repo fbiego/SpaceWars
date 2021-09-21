@@ -5,6 +5,8 @@ Original code at [`https://github.com/VolosR/SpaceWars`](https://github.com/Volo
 
 ###
 
+[`ESP32 SpaceWars video`](https://www.youtube.com/watch?v=nVdYzhNPTds)
+
 ![1](img.jpg?raw=true "3")
 
 The code has been modified to work with GC901A round display and a PS3 controller on ESP32
