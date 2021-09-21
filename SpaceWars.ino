@@ -337,13 +337,13 @@ void loop() {
         }
         gfx->fillRect(buletX[j], buletY[j] + 50, 12, 12, BLACK);
         buletX[j] = -50;
-        brojac = brojac + 1;
+        brojac++;
+        eHealth--;
         gfx->setCursor(200, 0);
         gfx->setTextColor(WHITE, BLACK);
         gfx->print(brojac);
         gfx->setCursor(130, 40);
         gfx->print("Level " + String(level));
-        eHealth--;
         tr = map(eHealth, 0, mHealth, 0, 70);
         gfx->fillRect(120, 53, 70, 7, BLACK);
         gfx->fillRect(120, 53, tr, 7, GREEN);
