@@ -184,7 +184,7 @@ void draw() {
   pad();
   gfx->setTextColor(WHITE, BLACK);
   gfx->setCursor(70, 50);
-  gfx->setTextSize(3,3,1);
+  gfx->setTextSize(3, 3, 0);
   gfx->print("Level " + String(level));
   gfx->setCursor(0, 92);
   gfx->setTextSize(1);
@@ -338,6 +338,8 @@ void loop() {
         gfx->setCursor(200, 0);
         gfx->setTextColor(WHITE, BLACK);
         gfx->print(brojac);
+        gfx->setCursor(140, 30);
+        gfx->print("Level " + String(level));
         eHealth--;
         tr = map(eHealth, 0, mHealth, 0, 70);
         gfx->fillRect(120, 53, 70, 7, BLACK);
@@ -381,6 +383,8 @@ void loop() {
         gfx->setCursor(200, 50);
         gfx->setTextColor(WHITE, BLACK);
         gfx->print(brojac);
+        gfx->setCursor(140, 30);
+        gfx->print("Level " + String(level));
         eHealth = eHealth - rDamage;
         tr = map(eHealth, 0, mHealth, 0, 70);
         gfx->fillRect(120, 53, 70, 7, BLACK);
