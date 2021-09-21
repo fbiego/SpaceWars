@@ -184,7 +184,7 @@ void draw() {
   pad();
   gfx->setTextColor(WHITE, BLACK);
   gfx->setCursor(70, 50);
-  gfx->setTextSize(2);
+  gfx->setTextSize(3,3,1);
   gfx->print("Level " + String(level));
   gfx->setCursor(0, 92);
   gfx->setTextSize(1);
