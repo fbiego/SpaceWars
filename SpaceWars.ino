@@ -110,9 +110,9 @@ void setup() {
 
 void pad() {
   if (Ps3.isConnected()) {
-    gfx->draw16bitRGBBitmap(112, 5, gamepad,  16, 16);
+    gfx->draw16bitRGBBitmap(108, 5, gamepad, 24, 24);
   } else {
-    gfx->fillRect(112, 5, 16, 16, BLACK);
+    gfx->fillRect(108, 5, 24, 24, BLACK);
   }
 }
 
