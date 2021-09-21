@@ -183,7 +183,7 @@ void draw() {
   gfx->fillScreen(BLACK);
   pad();
   gfx->setTextColor(WHITE, BLACK);
-  gfx->setCursor(30, 72);
+  gfx->setCursor(70, 50);
   gfx->setTextSize(2);
   gfx->print("Level " + String(level));
   gfx->setCursor(0, 92);
