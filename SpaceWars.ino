@@ -79,10 +79,11 @@ float spaceX[30];
 float spaceY[30];
 
 uint8_t mac[] = {1, 2, 3, 4, 5, 6};
-int st = 0;
+int st = 0, sr = 0;
 
 void notify() {
   st = Ps3.data.button.circle;
+  sr = Ps3.data.button.cross;
 }
 
 void setup() {
@@ -101,7 +102,7 @@ void setup() {
     spaceY[i] = random(68, 182);
   }
 
-  while (st == 0) { // wait until button a is pressed.............
+  while (sr == 0) { // wait until button a is pressed.............
     Serial.print("");
     pad();
   }
@@ -228,7 +229,7 @@ void loop() {
     gfx->fillScreen(BLACK);
     pad();
     gfx->draw16bitRGBBitmap(0, 50, back2,  240, 135);
-    while (st == 0) { // wait until button a is pressed.............
+    while (sr == 0) { // wait until button a is pressed.............
       Serial.print("");
       pad();
     }
