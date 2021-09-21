@@ -78,7 +78,7 @@ int fase = 0; //fase 0=start screen,//fase 1=playing fase //fase 3=game over
 float spaceX[30];
 float spaceY[30];
 
-uint8_t mac[] = {1, 2, 3, 4, 5, 6};
+uint8_t mac[] = {1, 2, 3, 4, 5, 6}; //(01:02:03:04:05:06) use any pair tool to set the gamepad server address to this
 int st = 0, sr = 0;
 
 void notify() {
